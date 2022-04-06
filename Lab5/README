@@ -1,0 +1,51 @@
+Summarize your lab:
+
+  Part 1:
+     Works  Yes
+     
+  Part 2:
+     Works  Yes
+     
+  Part 3:
+     Works  Yes, mostly. The only issue I have been having is that it has been having troule counting duplicates.
+     
+***ANSWERS TO QUESTIONS***
+ Question 1:
+     Which hash table collision resolution method did you use
+     (eg. chaining or open addressing)? Explain your choice
+     briefly (less than 25 words).
+ YOUR ANSWER:
+ 
+	I choose to take the next open address. I generate a hash, take that as my index value and if there is something currently there incrament until it finds an open index.
+ 
+ Question 2:
+       Which hash function (division or multiplication) did you use?
+       How did you convert a string into a number?
+ YOUR ANSWER:
+	
+ 	I actually used djb2, I choose DJB2 because it generates very few collision for a very large input set. I know that by moding it by the size of the table I increase the chance of collision but I am
+	okay with that.
+
+	I used the ascii char value for each char in my string.
+
+	for more info on djb2 refer to these links:
+
+	https://softwareengineering.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed
+	http://www.cse.yorku.ca/~oz/hash.html 
+ 
+ Question 3:
+       Another legal XML tag not used in this lab is the
+       stand-alone tag.  This kind of tag
+       combines both a start-tag and end-tag in one.
+       It is identified with a '/' (slash) preceding the
+       final >.  (For example, the <foo/>
+       is a stand-alone tag that is self balancing.
+       
+       Describe briefly how
+       you would modify Part 3 to allow this kind of tag.
+       
+ YOUR ANSWER:
+  
+	I would modify the logic surrounding intaking tags, to look for the '>' char and if the char before it was the '/' I would add it to the hashtable. 
+	
+	I would not even bother putting it in the stack, there is no point because since it has to end tag. 
